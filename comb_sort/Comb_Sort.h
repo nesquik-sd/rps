@@ -5,5 +5,4 @@
 using namespace std; 
 
 double* comb_sort(double* arr, int quanity); //реализация сортировки
-void unit_test(); //модульное тестирование (автоматическое заполенение с файла)
 

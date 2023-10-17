@@ -2,6 +2,5 @@
 #include "iostream"
 using namespace std;
 
-int check_get_int();//функция для проверки ввода чисел
-int check_two_selections();//проверка ввода с двумя выборами (сохранить или нет)
-int check_three_selections();//проверка ввода с тремя выборами (для начала программы)
+int check_get_int();//функция для проверки ввода целых чисел
+int Check_Choise(int count_of_action); //проверка для ввода варианта из меню
