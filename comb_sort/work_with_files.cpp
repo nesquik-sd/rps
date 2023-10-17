@@ -2,8 +2,11 @@
 
 enum want_save { YES = 1, NOPE };
 
-
-//проверка имени файла на существование
+/// <summary>
+/// Проверка имени файла на существование файла
+/// </summary>
+/// <param name="filename">Имя файла</param>
+/// <returns>Флаг</returns>
 bool Bool_Check_Filename(string filename) { 
 	ifstream file(filename.c_str());
 
@@ -18,7 +21,10 @@ bool Bool_Check_Filename(string filename) {
 	}
 }
 
-//проверка на существование + считывание
+/// <summary>
+/// проверка на существование + считывание
+/// </summary>
+/// <returns></returns>
 string Get_Correct_Filename() { 
 	string file_name = "";
 
