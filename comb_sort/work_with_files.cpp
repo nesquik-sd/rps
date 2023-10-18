@@ -67,7 +67,7 @@ int Get_Count_Of_Elements(string file_name) {
 	return count;
 }
 
-//заполенение с файла
+//заполенение с файл
 double* Get_Arr_From_File(string file_name, int count_of_elements) { //заполенение с файла
 	ifstream file(file_name);
 	double* arr;

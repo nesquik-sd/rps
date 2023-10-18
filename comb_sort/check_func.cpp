@@ -1,27 +1,27 @@
 #include "Check_Func.h"
 
-//ôóíêöèÿ äëÿ ïðîâåðêè ââîäà öåëûõ ÷èñåë
+//äã­ªæ¨ï ¤«ï ¯à®¢¥àª¨ ¢¢®¤  æ¥«ëå ç¨á¥«
 int check_get_int() { 
 	int input = 0;
 
 	while (!(cin >> input)) {
 		cin.clear();
 		while ((cin.get() != '\n'));
-		cout << "Ïîæàëóéñòà, ââåäèòå ÷èñëî: ";
+		cout << "®¦ «ã©áâ , ¢¢¥¤¨â¥ ç¨á«®: ";
 	}
 
 	while (cin.get() != '\n');
 	return input;
 }
 
-//ïðîâåðêà äëÿ êîððåêòíîñòè âûáðà
+//¯à®¢¥àª  ¤«ï ª®àà¥ªâ­®áâ¨ ¢ë¡à 
 int Check_Choise(int count_of_action) {
-	cout << "Âàø âûáîð: "; 
-	int choice = check_get_int(); //ïðîâåðêà íà ââîä ÷èñëà
+	cout << "‚ è ¢ë¡®à: "; 
+	int choice = check_get_int(); //¯à®¢¥àª  ­  ¢¢®¤ ç¨á« 
 
 	while ((choice == 0) || (choice > count_of_action)) {
-		cout << "Òàêîãî âàðèàíòà íåò. Ïîïðîáóéòå åùå ðàç" << endl;
-		cout << "Âàø âûáîð: ";
+		cout << "’ ª®£® ¢ à¨ ­â  ­¥â. ®¯à®¡ã©â¥ ¥é¥ à §" << endl;
+		cout << "‚ è ¢ë¡®à: ";
 		choice = check_get_int();
 	}
 
