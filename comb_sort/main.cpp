@@ -1,68 +1,44 @@
 #include "iostream"
+#include "Menu_Items.h"
+#include "Menu.h"
 #include "Comb_Sort.h"
 #include "Work_With_Files.h"
-#include "menu.h"
-enum { START = 1, UNIT = 2, EXIT = 3 };
-
-using namespace std;
+#include "Filling_Methods.h"
 
 int main()
 {
     setlocale(LC_ALL, "Russian");
-    int quanity = 0; //переменна€ количества элементов массива
-    double* arr; //создаем массив
-    arr = new double[quanity]; //выдел€ем пам€ть
-    double* sorted_arr; //создаем массив дл€ отсортировки
-    sorted_arr = new double[quanity]; //выдел€ем пам€ть
-    int start_select = 0; // выбор начать или нет
-    string file_name = ""; //переменна€ дл€ названи€ файла
     
-    about_us(); //кратка€ информаци€ о задании и участниках группы
+    About_Project(); //кратка€ информаци€ о задании и участниках группы
 
-    while (start_select != EXIT) { //зацикленное меню. работает до выбора пользователем варианта "выход"
+    int user_select = 0; // переменна€ дл€ выбора действи€ пользователем
 
-        start_or_exit(); //начать или нет
-        start_select = check_three_selections(); //проверка дл€ ввода только чисел
+    while (user_select != EXIT) { //зацикленное меню. работает до выбора пользователем варианта "выход"
 
-        switch (start_select) { //выбор пользовател€ 
-        case (START): {  //если выбрал вариант "заполнить самому"
-                
-                file_name = check_filename();//ввод имени файла
-                quanity = get_quanity(file_name); //подсчет количества элементов в файле
-                arr = matrix_from_file(file_name, quanity); //заполенение 
-                cout << "----------------------------------------" << endl;
-                cout << " оличество элементов в массиве: " << quanity << endl;
-                cout << "----------------------------------------" << endl;
-                cout << "»сходный массив: " << endl;
-                for (int i = 0; i < quanity; i++) {
-                    cout << arr[i] << " ";
-                }
-                sorted_arr = comb_sort(arr, quanity); //сортируем массив
-                cout << "ќтсортированный массив: " << endl;
-                for (int i = 0; i < quanity; i++) {
-                    cout << sorted_arr[i] << " ";
-                }
-                save_result(quanity, sorted_arr); //возможность сохранить
+        Choose_Action(); //выбор действи€ (выбрать файл, считать с файла автоматически, выход)
+        user_select = Check_Choise(EXIT); //проверка ввода только чисел
+
+        switch (user_select) { //действие, выполн€емое исход€ из выбора
+
+            case (CHOOSE_FILE): {  //пользователь может сам указать файл дл€ сортирови
+                Choose_File();
                 break;
-        }
-        case(UNIT): {
-            unit_test(); //автоматическое заполнение массива с файла
-            break;
+            }
 
-        }
-        case(EXIT): {
-            
-            break;
-        }
-         
+            case(FILL_AUTO_FILE): { //сортировка по заранее выбранному файлу
+                Fill_Auto_File();
+                break;
+            }
 
+            case(FILL_AUTO_RANDOM): { //заполнение массива рандомного размера рандомными числами
+                Fill_Auto_Random();
+            }
+
+            case(EXIT): { //кнопка выхода
+                break;
+            }
         }
-     delete[] arr;
-     delete[] sorted_arr;
+        system("cls");
     }
-
-   
-   
-    
     return 0;
 }
