@@ -1,5 +1,6 @@
 #include "Comb_Sort.h"
 #include "Work_With_Files.h"
+
 double* comb_sort (double* arr, int count_of_elements){ //реализаци€ сортировки расческой 
 	int step = count_of_elements;//начальный шаг = количеству элементов в массиве / 1,2, 
 	int count_permutation = 0;
@@ -21,9 +22,7 @@ double* comb_sort (double* arr, int count_of_elements){ //реализаци€ сортировки 
 				swap(arr[i], arr[i + step]);
 				count_permutation++;
 			}
-
 		}
-			
 	}
 
 	cout << " оличество перестановок - " << count_permutation << endl;

@@ -3,7 +3,7 @@
 enum want_save { YES = 1, NOPE };
 
 /// <summary>
-/// Проверка имени файла на существование файла
+/// Проверка имени файла на существование файла 
 /// </summary>
 /// <param name="filename">Имя файла</param>
 /// <returns>Флаг</returns>
@@ -24,7 +24,7 @@ bool Bool_Check_Filename(string filename) {
 /// <summary>
 /// проверка на существование + считывание
 /// </summary>
-/// <returns></returns>
+/// <returns>имя файла</returns>
 string Get_Correct_Filename() { 
 	string file_name = "";
 
@@ -50,7 +50,11 @@ string Get_Correct_Filename() {
 	return file_name;
 }
 
-//подсчет количества элементов в файле
+/// <summary>
+/// подсчет количества элементов в файле
+/// </summary>
+/// <param name="file_name"></param>
+/// <returns>количество элементов</returns>
 int Get_Count_Of_Elements(string file_name) { 
 	ifstream file(file_name);
 	int count = 0;
